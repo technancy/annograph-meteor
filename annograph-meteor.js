@@ -1,19 +1,18 @@
+Categories = new Meteor.Collection('Categories');
+
 if (Meteor.isClient) {
-  Template.hello.greeting = function () {
-    return "Welcome to annograph-meteor.";
+  Template.category.listCategories = function () {
+    return Categories.find();
   };
 
-  Template.hello.events({
-    'click input': function () {
-      // template data, if any, is available in 'this'
-      if (typeof console !== 'undefined')
-        console.log("You pressed the button");
-    }
-  });
-}
+  Template.category.events({
 
-if (Meteor.isServer) {
-  Meteor.startup(function () {
-    // code to run on server at startup
+    'click #addCategory': function (evt, templ) {
+      var category = templ.find("#nameOfCategory").value;
+      Categories.insert({
+        category: category
+      });
+
+      }
   });
 }

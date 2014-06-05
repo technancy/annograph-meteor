@@ -1,13 +1,24 @@
 <head>
-  <title>annograph-meteor</title>
+  <title>AnnoGraph</title>
 </head>
 
 <body>
-  {{> hello}}
+    <h2>AnnoGraph</h2>
+  {{> category}}
 </body>
 
-<template name="hello">
-  <h1>Hello World!</h1>
-  {{greeting}}
-  <input type="button" value="Click" />
+<template name="category">
+  <div class="key-categories">
+    {{#each listCategories}}
+      <span>{{category}} </span>
+    {{/each}}
+  </div>
+
+  <h3>Add your categories</h3>
+
+  <input type="text" id="nameOfCategory"/>
+  <input type="button" id="addCategory" value="Add" />
+
 </template>
+
+
