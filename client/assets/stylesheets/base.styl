@@ -5,32 +5,56 @@ body {
 
 .key-categories {
   margin: 0 0 15px 0;
+  float: left;
+  clear: both;
+  width: 100%;
   font: normal small-caps bold 12px/14px Helvetica, Verdana, Arial;
   span {
     background: #000;
     color: white;
     padding: 0 0 2px 8px;
+    margin: 2px 0 0 0;
+    display: inline-block;
 
     i {
       cursor: pointer;
-      background: #555;
+      background: #DDD;
       padding: 0 5px;
+      color: #000;
       margin: 0 0 0 8px;
-      box-shadow: 1px -1px 2px 0px #000;
       border: solid 1px #000;
       &:hover {
         background: white;
-        color: #555;
-         border: solid 1px #CCC;
+        color: red;
+        border: solid 1px red;
       }
     }
 
   }
 }
+.articles {
+  float: left;
+  clear: both;
 
-.article {
-  margin: 15px 0 0 0;
-  padding: 10px;
-  border: solid 1px #000;
-  width: 500px;
+
+  #addArticle {
+    float: left;
+    display: inline-block;
+  }
+
+  .allArticles {
+    float: left;
+    clear: both;
+  }
+
+  .editArticle {
+    float: left;
+    margin: 0 8px 0 0;
+  }
+  .article {
+    margin: 15px 0 0 0;
+    padding: 10px;
+    border: solid 1px #000;
+    width: 500px;
+  }
 }

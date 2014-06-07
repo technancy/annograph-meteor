@@ -1,0 +1,40 @@
+<head>
+  <title>AnnoGraph</title>
+</head>
+
+<body>
+    <h2>AnnoGraph</h2>
+  {{> category}}
+  {{> article}}
+</body>
+
+<template name="category">
+  <div class="key-categories">
+    <input type="text" id="nameOfCategory"/>
+    <input type="button" id="addCategory" value="Category +" />
+    {{#each listCategories}}
+      <span>{{category}} <i class="delete">-</i></span>
+    {{/each}}
+  </div>
+</template>
+
+<template name="article">
+  <div class="articles">
+    <input type="button" id="addArticle" value="Article +" />
+    <div class="allArticles">
+      {{#each listArticles}}
+        <div class="editArticle">
+          <div class="article" id={{_id}} contenteditable="true">
+            {{content}}
+          </div>
+          <input type="button" class='edit' value="Edit" />
+          <input type="button" class='delete' value="Delete" />
+          <input type="button" class='save' value="Save" />
+        </div>
+      {{/each}}
+    </div>
+
+  </div>
+</template>
+
+
