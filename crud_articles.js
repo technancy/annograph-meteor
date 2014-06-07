@@ -15,7 +15,7 @@ if (Meteor.isClient) {
 
     'click .edit': function (evt, templ) {
       var art = document.getElementById(this._id);
-      Meteor.annoFunct.setEndOfContenteditable(art);
+      Meteor.annoPlease.setEndOfContenteditable(art);
     },
 
     'click .delete': function (evt, templ) {
@@ -29,6 +29,5 @@ if (Meteor.isClient) {
         $set: {content: innerArt}
       });
     }
-
   });
 }

@@ -3,7 +3,6 @@
 </head>
 
 <body>
-    <h2>AnnoGraph</h2>
   {{> category}}
   {{> article}}
 </body>
@@ -20,7 +19,8 @@
 
 <template name="article">
   <div class="articles">
-    <input type="button" id="addArticle" value="Article +" />
+     <h2>AnnoGraph</h2><input type="button" id="addArticle" value="Article +" />
+
     <div class="allArticles">
       {{#each listArticles}}
         <div class="editArticle">
