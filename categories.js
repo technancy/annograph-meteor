@@ -12,7 +12,12 @@ if (Meteor.isClient) {
       Categories.insert({
         category: category
       });
+    },
 
-      }
+    'click .delete': function (evt, templ) {
+      var category = templ.find("#nameOfCategory").value;
+      Categories.remove(this._id);
+    }
+
   });
 }
