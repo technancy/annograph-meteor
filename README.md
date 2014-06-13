@@ -1,4 +1,4 @@
-#Annograph
+#AnnoGraph
 
 ##"A highlighter you can make graphs with."
 
