@@ -40,15 +40,14 @@ Meteor.annoUI = {
       };
   },
   markupCategories: function() {
-    var what = Categories.find();
+    var label = Categories.find();
     var count = 0;
-    var markup;
+    var markupForLabel = "";
 
-    what.forEach(function (category) {
-      markup += "<div class='option'>" + category.category +"</div>";
+    label.forEach(function (category) {
+      markupForLabel += "<div class='option'>" + category.category +"</div>";
       count += 1;
     });
-
-    return markup;
+    return markupForLabel;
   }
 }
