@@ -9,13 +9,13 @@ if (Meteor.isClient) {
 
     'click #addArticle': function (evt, templ) {
       Articles.insert({
-        content: 'Enter your text here, and begin highlighting.'
+        content: '<PRE><b>Enter your</b> text here, and begin highlighting.</PRE>'
       });
     },
 
     'click .edit': function (evt, templ) {
-      var art = document.getElementById(this._id);
-      Meteor.annoPlease.setEndOfContenteditable(art);
+      var article = document.getElementById(this._id);
+      Meteor.annoPlease.setEndOfContenteditable(article);
     },
 
     'click .delete': function (evt, templ) {
@@ -24,9 +24,9 @@ if (Meteor.isClient) {
     },
 
     'click .save': function (evt, templ) {
-      var innerArt = document.getElementById(this._id).innerHTML;
+      var innerArticle = document.getElementById(this._id).innerHTML;
       Articles.update(this._id, {
-        $set: {content: innerArt}
+        $set: {content: innerArticle}
       });
     }
   });
