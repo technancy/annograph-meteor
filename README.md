@@ -18,9 +18,6 @@ Setup requires node, npm, and meteor.
 
 ```
 git clone https://github.com/technancy/annograph-meteor.git
- 
-rvm install ruby-2.0.0-p247
-rvm use ruby-2.0.0-p247
 
 sudo npm install meteor
 ```
