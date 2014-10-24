@@ -90,8 +90,9 @@ Meteor.annoUI = {
   },
   applyHighlight: function(classColour) {
     var self = this;
-      console.log("APPLYing HIGHlight COLOR " + classColour);
+      console.log("APPLYing HIGHlight COLOR " + "#"+this._id + classColour);
       var saved = document.getElementById("uCsdpoWq8XyZKZsmn").innerHTML;
+
       var revision = saved.replace(highlight, "<span class='"+ classColour + "'>" + highlight + "</span>");
       document.getElementById("uCsdpoWq8XyZKZsmn").innerHTML = revision;
       self.toggleToolTip();
