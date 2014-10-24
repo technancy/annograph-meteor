@@ -49,5 +49,57 @@ Meteor.annoUI = {
       count += 1;
     });
     return markupForLabel;
+  },
+  anticipateOption: function() {
+    var self = this;
+      console.log("What will you choose now?");
+
+      document.body.onmousedown = function(e){
+        e = window.event? event.srcElement: e.target;
+        console.log(e);
+        if(e.className && e.className.indexOf('option')!=-1){
+          var opts = document.getElementsByClassName("option"),
+          optsLength = opts.length, i;
+            for(i=0; i < optsLength; i++) {
+              (function(i) {
+                opts[i].onclick = function() {
+                  self.pickColour(i);
+                  self.tallyUp(i);
+                };
+              })(i);
+            };
+        }
+        else {
+          console.log("you've pressed something other than a tooltip option");
+        };
+      };
+  },
+  pickColour: function(num) {
+    var self = this;
+    console.log('PICKing Colour ' + num);
+    if(num == 0){clr = 'green';}
+    else if(num == 1){clr = 'yellow';}
+    else if(num == 2){clr = 'red';}
+    self.applyHighlight(clr);
+  },
+  tallyUp: function(num){
+    n = parseInt(num,0);
+    var which = "tally_" + n;
+    var trump = document.getElementById("tally_"+n).innerHTML;
+    document.getElementById("tally_"+n).innerHTML = parseInt(trump) + 1;
+  },
+  applyHighlight: function(classColour) {
+    var self = this;
+      console.log("APPLYing HIGHlight COLOR " + classColour);
+      var saved = document.getElementById("uCsdpoWq8XyZKZsmn").innerHTML;
+      var revision = saved.replace(highlight, "<span class='"+ classColour + "'>" + highlight + "</span>");
+      document.getElementById("uCsdpoWq8XyZKZsmn").innerHTML = revision;
+      self.toggleToolTip();
+  },
+  toggleToolTip: function(){
+    if($('#labeller')) {
+      $('#labeller').fadeOut();
+      $('#labeller').remove();
+    }
   }
 }
