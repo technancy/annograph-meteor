@@ -12,6 +12,25 @@ A tally is kept of how many pieces of text were assigned to each key value.
 
 A highlight is left behind with a corresponding key value colour, to get an overall sense of how the text evolves between each key value.
 
+================
+*Installation:*
+Setup requires node, npm, and meteor.
+
+```
+git clone https://github.com/technancy/annograph-meteor.git
+ 
+rvm install ruby-2.0.0-p247
+rvm use ruby-2.0.0-p247
+
+sudo npm install meteor
+```
+
+*Run:*  
+```
+meteor
+```
+
+================
 
 ##Extension:
 The tally of the results can then be displayed as a graph.
@@ -64,19 +83,5 @@ Freestyle mode would let the user highlight by click-dragging the cursor, and sh
 
 Sentence mode would highlight a sentence on rollover and show the tooltip (Labeller) on click.
 
-=================
 
-*Installation:*
-Setup requires node, npm, and meteor.
 
-```
-git clone https://github.com/technancy/annograph-meteor.git
- 
-rvm install ruby-2.0.0-p247
-rvm use ruby-2.0.0-p247
-
-sudo npm install meteor
-```
-
-*Run:*  
-```meteor```
